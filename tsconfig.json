@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+      "noEmit": true, // do not emit source files, makes room for babel
+      "target": "es6", // using babel-loader to transpile to es5
+      "module": "esnext", //commonjs destroys 'dynamic imports' which is used for code splitting
+      "noImplicitAny": false, //allows ts to fall back to any type when no type declared
+      "preserveConstEnums": true, //increases speed at cost of memory footprint
+      "baseUrl": "./app",
+      "jsx": "react", // process JSX
+      "lib": ["dom", "es5", "es6", "es7", "es2017"],
+      "allowSyntheticDefaultImports": true, // no errors with commonjs modules interop
+      "esModuleInterop": true, // forces modules to use strict types AND prevents libraries from being called as functions
+      "allowJs": true, // include js files
+      "declaration": false, // true = generate .d.ts type files for all of your files (And pollute your project)
+      "emitDecoratorMetadata": true, // emits decorator types
+      "experimentalDecorators": true, // decorator implementation may differ slightly from es6
+      "forceConsistentCasingInFileNames": true, 
+      "moduleResolution": "node", // leave as node in TS 1.6+ 
+      "noEmitOnError": true,
+      "noFallthroughCasesInSwitch": true, 
+      "noImplicitReturns": true,
+      "noImplicitThis": true, 
+      "noUnusedLocals": false,
+      "strict": true,
+      "strictFunctionTypes": false,
+      "pretty": true,
+      "removeComments": true,
+      "sourceMap": true
+    },
+    "include": ["app/**/*", "internals/templates/**/*"],
+    "exclude": ["node_modules"]
+  }
